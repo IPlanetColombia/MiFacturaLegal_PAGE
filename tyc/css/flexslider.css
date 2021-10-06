@@ -1,0 +1,146 @@
+/ *
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * De uso gratuito bajo la licencia GPLv2.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Autor colaborador: Tyler Smith (@mbmufffin)
+ * /
+/ * Restablecimiento del navegador * /
+.flex-container a: activo,
+.flexslider a: activo,
+.flex-container a: foco,
+.flexslider a: focus {esquema: ninguno;}
+.deslizadores,
+.flex-control-nav,
+.flex-direction-nav {margen: 0; acolchado: 0; estilo de lista: ninguno;}
+
+/ * Estilos necesarios de FlexSlider
+******************************** /
+.flexslider {margen: 0; relleno: 0;}
+.flexslider .slides> li {display: none; -webkit-backface-visible: hidden;} / * Ocultar las diapositivas antes de que se cargue el JS. Evita el salto de imagen * /
+.flexslider .slides img {ancho: 100%; bloqueo de pantalla;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/ * Clearfix para el elemento .slides * /
+.slides: after {content: "."; bloqueo de pantalla; Limpia los dos; visibilidad: oculta; altura de línea: 0; altura: 0;}
+html [xmlns] .slides {display: block;}
+
+/ * Sin respaldo de JavaScript * /
+/ * Si no está utilizando otro script, como Modernizr, asegúrese de
+ * incluir js que elimina esta clase al cargar la página * /
+.no-js .slides> li: first-child {display: block;}
+
+
+/ * Tema predeterminado de FlexSlider
+******************************** /
+.flexslider {margen: 20px 110px 0px 113px;
+	tamaño de fondo: 100% 100%; posición: relativa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -o-radio-borde: 4px; radio del borde: 4px; , 0,0, .2); zoom: 1;}
+.flex-viewport {altura máxima: 1500px; -webkit-transición: facilidad de todos los 1; -moz-transición: todos los 1 se facilitan; transición: todos los unos se facilitan;}
+.loading .flex-viewport {max-height: 300px;}
+.flexslider .slides {zoom: 1;}
+.carousel li {margen derecho: 5px}
+/ * Navegación de dirección * /
+.flex-direction-nav a {ancho: 30px; altura: 30px; margen: -20px 0 0; bloqueo de pantalla; background: url (../ images / nav.png) no repetir 0 0; posición: absoluta; arriba: 50%; cursor: puntero; sangría de texto: -9999px; opacidad: 0; -webkit-transición: todo .3s facilidad;}
+.flex-direction-nav .flex-next {posición de fondo: 100% 0; derecha: -36px; }
+.flex-direction-nav .flex-prev {izquierda: -36px;}
+.flexslider: hover .flex-next {opacidad: 0.8; derecha: 5px;}
+.flexslider: hover .flex-prev {opacidad: 0.8; izquierda: 5px;}
+.flexslider: hover .flex-next: hover, .flexslider: hover .flex-prev: hover {opacidad: 1;}
+.flex-direction-nav .disabled {opacidad: .3! importante; filtro: alfa (opacidad = 30); cursor: predeterminado;}
+
+/ * Control de navegación * /
+.flex-control-nav {ancho: 100%; posición: absoluta; abajo: -110px; izquierda: 193px;}
+.flex-control-nav li {margen: 0 6px; pantalla: bloque en línea; zoom: 1; * pantalla: en línea;}
+.flex-control-paging li a {ancho: 18px; altura: 18px; bloqueo de pantalla; borde: 2px sólido # dedfe0; cursor: puntero; sangría de texto: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-radio-borde: 20px; radio del borde: 20px; caja-sombra: recuadro 0 0 3px rgba (0,0,0,0.3);}
+.flex-control-paging li a: hover {border: 2px solid # E83035; }
+.flex-control-paging li a.flex-active {borde: 2px sólido # E83035; cursor: predeterminado; }
+
+.flex-control-thumbs {margin: 5px 0 0; posición: estática; desbordamiento: oculto;}
+.flex-control-thumbs li {ancho: 25%; flotador izquierdo; margen: 0;}
+.flex-control-thumbs img {ancho: 100%; bloqueo de pantalla; opacidad: .7; cursor: puntero;}
+.flex-control-thumbs img: hover {opacidad: 1;}
+.flex-control-thumbs .active {opacidad: 1; cursor: predeterminado;}
+
+@media pantalla y (ancho máximo: 1280px) {
+	.flexslider {
+		margen: 19px 107px -10px 108px;
+	}
+	.flex-control-nav {
+		abajo: -102px;
+		izquierda: 189px;
+	}
+}
+@media pantalla y (ancho máximo: 1024px) {
+	.flexslider {
+		margen: 17px 88px 0px 96px;
+	}
+	.flex-control-paging li a {
+		ancho: 16px;
+		altura: 16px;
+	}
+	.flex-control-nav {
+		abajo: -104px;
+		izquierda: 146px;
+	}
+}
+@media pantalla y (ancho máximo: 860px) {
+  .flex-direction-nav .flex-prev {opacidad: 1; izquierda: 0;}
+  .flex-direction-nav .flex-next {opacidad: 1; derecha: 0;}
+}
+@media pantalla y (ancho máximo: 800px) {
+  .flexslider {
+		margen: 14px 73px -42px 73px;
+	altura mínima: 288px;
+	}
+	.flex-control-nav {
+		abajo: 0;
+		izquierda: 120px;
+	}
+}
+@media pantalla y (ancho máximo: 640px) {
+	.flexslider {
+		altura mínima: 265px;
+	}
+	.flex-control-paging li a {
+		ancho: 12px;
+		altura: 12px;
+	}
+	.flexslider {
+		margen: 10px 60px -100px 60px;
+	}
+	.flex-control-nav {
+		abajo: 18px;
+		izquierda: 97px;
+	}
+}
+@media pantalla y (ancho máximo: 480px) {
+	.flex-control-nav {
+		abajo: 72px;
+		izquierda: 65px;
+	}
+	.flexslider {
+		margen: 9px 44px -110px 43px;
+	}
+}
+@media pantalla y (ancho máximo: 320px) {
+.flexslider .slides img {
+		ancho: 98%;
+	}
+	.flex-control-paging li a {
+		ancho: 9px;
+		altura: 9px;
+	}
+	.flexslider {
+		altura mínima: 180px;
+	}
+	.flexslider {
+		margen: 8px 34px -92px 35px;
+	}
+	.flex-control-nav {
+		abajo: 9px;
+		izquierda: 57px;
+	}
+}

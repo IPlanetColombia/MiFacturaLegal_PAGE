@@ -1,0 +1,2425 @@
+/ * -
+Autor: W3layouts
+URL del autor: http://w3layouts.com
+Licencia: Creative Commons Attribution 3.0 Unported
+URL de la licencia: http://creativecommons.org/licenses/by/3.0/
+- * /
+cuerpo {
+    acolchado: 0;
+    margen: 0;
+    familia de fuentes: 'Open Sans', sans-serif;
+    fondo: #fff;
+}
+
+cuerpo a {
+    transición: 0,5 s todos;
+    -webkit-transición: 0,5 s todos;
+    -moz-transición: 0,5 s todos;
+    -o-transición: 0,5 s todos;
+    -ms-transición: 0,5 s todos;
+}
+
+span.menu {
+    pantalla: ninguna;
+}
+
+entrada [tipo = "botón"], entrada [tipo = "enviar"] {
+    transición: 0,5 s todos;
+    -webkit-transición: 0,5 s todos;
+    -moz-transición: 0,5 s todos;
+    -o-transición: 0,5 s todos;
+    -ms-transición: 0,5 s todos;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margen: 0;
+}
+
+pag {
+    margen: 0;
+    tamaño de fuente: 12px;
+}
+
+ul {
+    margen: 0;
+    acolchado: 0;
+}
+
+etiqueta {
+    margen: 0;
+}
+
+/ * ----- encabezado-inicio ---- * /
+.header {
+    acolchado: 2em 0;
+}
+
+.logo {
+    flotador izquierdo;
+}
+
+.logo a {
+    bloqueo de pantalla;
+}
+
+.menu principal {
+    flotar derecho;
+}
+
+.top-menu ul li {
+    pantalla: bloque en línea;
+}
+
+.top-menu ul li a {
+    color: # 000;
+    transformación de texto: mayúsculas;
+    tamaño de fuente: 18px;
+    peso de fuente: 400;
+    familia de fuentes: 'Lato', sans-serif;
+    decoración de texto: ninguna;
+    relleno: 6px 15px;
+}
+
+.top-menu ul li a.active {
+    fondo: # E83035;
+    color: #fff;
+    relleno: 6px 15px;
+    radio del borde: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-radio-borde: 4px;
+    -ms-border-radius: 4px;
+}
+
+/ * Obturador horizontal * /
+a.hvr-shutter-out-horizontal {
+    pantalla: bloque en línea;
+    alineación vertical: medio;
+    -webkit-transform: translateZ (0);
+    transformar: translateZ (0);
+    caja-sombra: 0 0 1px rgba (0, 0, 0, 0);
+    -webkit-backface-visibilidad: oculto;
+    visibilidad del reverso: oculto;
+    -moz-osx-font-smoothing: escala de grises;
+    posición: relativa;
+    -webkit-transición-propiedad: color;
+    propiedad de transición: color;
+    -webkit-transición-duración: 0.3s;
+    duración de la transición: 0,3 s;
+    fondo: #fff;
+    color: #fff;
+    relleno: 6px 15px;
+}
+
+a.hvr-shutter-out-horizontal: before {
+    contenido: "";
+    posición: absoluta;
+    índice z: -1;
+    arriba: 0;
+    abajo: 0;
+    izquierda: 0;
+    derecha: 0;
+    fondo: # 2583C6;
+    -webkit-transform: scaleX (0);
+    transformar: scaleX (0);
+    -webkit-transform-origin: 50%;
+    origen de transformación: 50%;
+    -webkit-transición-propiedad: transformar;
+    propiedad de transición: transformar;
+    -webkit-transición-duración: 0.3s;
+    duración de la transición: 0,3 s;
+    -función-temporizador-transición-kit-web: salida fácil;
+    función de temporización de transición: facilidad de salida;
+    color: #fff;
+    relleno: 6px 15px;
+    radio del borde: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-radio-borde: 4px;
+    -ms-border-radius: 4px;
+}
+
+a.hvr-shutter-out-horizontal: hover, a.hvr-shutter-out-horizontal: focus, a.hvr-shutter-out-horizontal: active {
+    color blanco;
+}
+
+a.hvr-shutter-out-horizontal: hover: before, a.hvr-shutter-out-horizontal: focus: before, a.hvr-shutter-out-horizontal: active: before {
+    -webkit-transform: scaleX (1);
+    transformar: scaleX (1);
+}
+
+.top-menu ul {
+    margen superior: 20px;
+}
+
+.banner {
+    fondo: # f4f4f4;
+    fondo acolchado: 10em;
+    background-image: url ("../ images / background-home.jpg");
+    tamaño de fondo: cubierta;
+    repetición de fondo: no repetición;
+    archivo adjunto de fondo: fijo;
+    posición de fondo: centro;
+}
+
+.banner-info h2 {
+    color blanco;
+    tamaño de fuente: 2.5em;
+    peso de fuente: 800;
+    transformación de texto: mayúsculas;
+    espaciado entre palabras: 2px;
+    acolchado superior: 1em;
+}
+
+.banner-info p {
+    color blanco;
+    tamaño de fuente: 1.12em;
+    peso de fuente: 600;
+    margen: 0.1em 0 1em 0;
+}
+
+.details input [type = "text"] {
+    ancho: 85%;
+    color: # a9a9a9;
+    tamaño de fuente: 0.9em;
+    relleno: 14px 14px 14px 0;
+    borde: ninguno;
+    esquema: ninguno;
+    fondo: #fff;
+}
+
+.details form li {
+    pantalla: bloque en línea;
+}
+
+.detalles {
+    margen: 3em 0 5em 0;
+}
+
+.details form li {
+    radio del borde: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-radio-borde: 3px;
+    estilo de lista: ninguno;
+    flotador izquierdo;
+    ancho: 26%;
+    fondo: #fff;
+    margen derecho: 0,7em;
+}
+
+.nombre {
+    fondo: url (../ images / img-sprite.png) sin repetición 0px 0px;
+    altura: 25px;
+    ancho: 25px;
+    bloqueo de pantalla;
+    flotador izquierdo;
+    margen: 10px 0px 9px 10px;
+}
+
+.correo {
+    fondo: url (../ images / img-sprite.png) sin repetición -25px 0px;
+    altura: 25px;
+    ancho: 25px;
+    bloqueo de pantalla;
+    flotador izquierdo;
+    margen: 10px 0px 9px 10px;
+}
+
+.num {
+    fondo: url (../ images / img-sprite.png) sin repetición -50px 0px;
+    altura: 25px;
+    ancho: 25px;
+    bloqueo de pantalla;
+    flotador izquierdo;
+    margen: 10px 0px 9px 10px;
+}
+
+.detalles formulario de entrada [tipo = "enviar"] {
+    color: #fff;
+    transformación de texto: mayúsculas;
+    tamaño de fuente: 0.95em;
+    peso de fuente: 300;
+    borde: ninguno;
+    fondo: # E83035;
+    relleno: 14px 0px;
+    ancho: 19%;
+    esquema: ninguno;
+    radio del borde: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-radio-borde: 4px;
+    -ms-border-radius: 4px;
+}
+
+.details formulario input [type = "submit"]: hover {
+    fondo: # 000;
+}
+
+.header-bottom {
+    posición: relativa;
+}
+
+.right-grid-1 {
+    background: url ('../ images / slider-bg.png') sin repetición 0px 0px;
+    tamaño de fondo: 100% 100%;
+    ancho: 62%;
+    margen: 0 automático;
+    posición: absoluta;
+    izquierda: 227px;
+    altura mínima: 380px;
+}
+
+.icon {
+    flotador izquierdo;
+    ancho: 15%;
+    margen derecho: 2%;
+}
+
+i.s1 {
+    ancho: 70px;
+    altura: 70px;
+    background: url ('../ images / img-sprite.png') sin repetición -540px 0px;
+    pantalla: bloque en línea;
+}
+
+.service-section-grid: hover i.s1 {
+    background: url ('../ images / img-sprite.png') sin repetición -540px -70px;
+}
+
+i.s2 {
+    ancho: 70px;
+    altura: 70px;
+    background: url ('../ images / img-sprite.png') sin repetición -610px 0px;
+    pantalla: bloque en línea;
+}
+
+.service-section-grid: hover i.s2 {
+    background: url ('../ images / img-sprite.png') no-repeat -610px -70px;
+}
+
+i.s3 {
+    ancho: 70px;
+    altura: 70px;
+    fondo: url ('../ images / img-sprite.png') sin repetición -680px 0px;
+    pantalla: bloque en línea;
+}
+
+.service-section-grid: hover i.s3 {
+    background: url ('../ images / img-sprite.png') sin repetición -680px -70px;
+}
+
+i.s4 {
+    ancho: 70px;
+    altura: 70px;
+    background: url ('../ images / img-sprite.png') sin repetición -750px 0px;
+    pantalla: bloque en línea;
+}
+
+.service-section-grid: hover i.s4 {
+    background: url ('../ images / img-sprite.png') sin repetición -750px -70px;
+}
+
+i.s5 {
+    ancho: 70px;
+    altura: 70px;
+    fondo: url ('../ images / img-sprite.png') sin repetición -820px 0px;
+    pantalla: bloque en línea;
+}
+
+.service-section-grid: hover i.s5 {
+    background: url ('../ images / img-sprite.png') sin repetición -820px -70px;
+}
+
+i.s6 {
+    ancho: 70px;
+    altura: 70px;
+    background: url ('../ images / img-sprite.png') sin repetición -890px 0px;
+    pantalla: bloque en línea;
+}
+
+.service-section-grid: hover i.s6 {
+    background: url ('../ images / img-sprite.png') sin repetición -890px -70px;
+}
+
+i.s7 {
+    ancho: 70px;
+    altura: 70px;
+    background: url ('../ images / img-sprite.png') sin repetición -960px 0px;
+    pantalla: bloque en línea;
+}
+
+.service-section-grid: hover i.s7 {
+    background: url ('../ images / img-sprite.png') no-repeat -960px -70px;
+}
+
+i.s8 {
+    ancho: 70px;
+    altura: 70px;
+    background: url ('../ images / img-sprite.png') no-repeat -1030px 0px;
+    pantalla: bloque en línea;
+}
+
+.service-section-grid: hover i.s8 {
+    background: url ('../ images / img-sprite.png') sin repetición -1030px -70px;
+}
+
+i.s9 {
+    ancho: 70px;
+    altura: 70px;
+    background: url ('../ images / img-sprite.png') no-repeat -1117px 0px;
+    pantalla: bloque en línea;
+}
+
+.service-section-grid: hover i.s9 {
+    background: url ('../ images / img-sprite.png') no-repeat -1117px -69px;
+}
+.service-section-grid: hover i.s10 {
+    background-image: url ("../ images / impresion.png");
+}
+
+.icon-text {
+    flotador izquierdo;
+    ancho: 83%;
+    margen superior: 0.8em;
+}
+
+.service-section {
+    acolchado: 6em 0;
+}
+
+.service-section-head h3 {
+    color: # 000;
+    tamaño de fuente: 2.2em;
+    peso de fuente: 900;
+    transformación de texto: mayúsculas;
+}
+
+.service-section-head {
+    margen inferior: 1em;
+}
+
+.service-section-head p {
+    color: # 394b50;
+    tamaño de fuente: 1.2em;
+    peso de fuente: 500;
+}
+
+.service-section-grid {
+    margen superior: 4em;
+    altura: 180px;
+}
+
+.service-section-grid a {
+    decoración de texto: ninguna;
+}
+
+.service-section-grid h4 {
+    color: # 000;
+    tamaño de fuente: 1.2em;
+    peso de fuente: 900;
+    transformación de texto: mayúsculas;
+    familia de fuentes: 'Lato', sans-serif;
+    margen inferior: 0.85em;
+}
+
+.service-section-grid p {
+    color: # 2a3133;
+    tamaño de fuente: 0.92em;
+    peso de fuente: 400;
+    altura de línea: 1.8em;
+}
+
+
+.about-section * {
+    color blanco;
+}
+
+.about-section h4 {
+    tamaño de fuente: 1.8em;
+}
+
+.about-section p {
+    tamaño de fuente: 0.8em;
+}
+
+.about_left {
+    acolchado: 0;
+}
+
+.about_left img {
+    ancho: 100%;
+}
+
+.sobre la derecha {
+    fondo: # 2583C6;
+    acolchado: 11em 8em 0;
+}
+
+.about_right h3 {
+    color: #fff;
+    tamaño de fuente: 2.2em;
+    peso de fuente: 700;
+    transformación de texto: mayúsculas;
+}
+
+.about_right p {
+    color: #fff;
+    tamaño de fuente: 1em;
+    peso de fuente: 500;
+    altura de línea: 1.9em;
+    margen: 1.6em 0 3em 0;
+}
+
+.about_right a {
+    decoración de texto: ninguna;
+    color: #fff;
+    tamaño de fuente: 1.05em;
+    peso de fuente: 300;
+    transformación de texto: mayúsculas;
+    relleno: 9px 18px;
+    borde: 1px sólido # e7ad48;
+}
+
+.about_right a: hover {
+    fondo: # 394b50;
+}
+
+.price-section {
+    acolchado: 6em 0;
+    fondo: # e7edf3;
+}
+
+.price-section-head h3 {
+    color: # 394b50;
+    tamaño de fuente: 2.2em;
+    peso de fuente: 900;
+    transformación de texto: mayúsculas;
+}
+
+.price-section-head p {
+    color: # 394b50;
+    tamaño de fuente: 1.2em;
+    peso de fuente: 500;
+}
+
+.price-section-grid h5 {
+    color: # 818b95;
+    familia de fuentes: 'Lato', sans-serif;
+    tamaño de fuente: 1.9em;
+    peso de fuente: 300;
+    transformación de texto: mayúsculas;
+    margen inferior: 0.8em;
+}
+
+.price-section-grid h3 span {
+    tamaño de fuente: 0.7em;
+    alineación vertical: superior;
+}
+
+.price-section-grid h3 {
+    color: # E83035;
+    familia de fuentes: 'Lato', sans-serif;
+    tamaño de fuente: 3.5em;
+    peso de fuente: 700;
+}
+
+.price-section-grid p {
+    color: # 818b95;
+    familia de fuentes: 'Lato', sans-serif;
+    tamaño de fuente: 1.1em;
+    peso de fuente: 300;
+    transformación de texto: mayúsculas;
+}
+
+.price-section-grid ul {
+    margen: 2.5em 0;
+}
+
+.price-section-grid ul li {
+    tipo de estilo de lista: ninguno;
+    color: # b5bbc1;
+    familia de fuentes: 'Lato', sans-serif;
+    tamaño de fuente: 1.1em;
+    peso de fuente: 400;
+    transformación de texto: mayúsculas;
+    borde superior: 1px sólido # e2e9f0;
+    acolchado: 0.7em;
+}
+
+.price-section-grid a {
+    color: #fff;
+    familia de fuentes: 'Lato', sans-serif;
+    tamaño de fuente: 1.1em;
+    decoración de texto: ninguna;
+    fondo: # E83035;
+    transformación de texto: mayúsculas;
+    peso de fuente: 400;
+    relleno: 11px 20px;
+    radio del borde: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-radio-borde: 4px;
+    -ms-border-radius: 4px;
+}
+
+.price-section-grid a: hover {
+    fondo: # 394b50;
+}
+
+.valor del precio {
+    borde: 1px sólido # ccd5df;
+    radio del borde: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-radio-borde: 4px;
+    -ms-border-radius: 4px;
+    acolchado: 4em 2em 5em 2em;
+    fondo: #fff;
+    ancho: 32,888%;
+    flotador izquierdo;
+    margen derecho: 0,6%;
+    margen superior: 6em;
+}
+
+.price-value: hover {
+    fondo: # 709dca;
+    borde: ninguno;
+}
+
+.price-value: hover div.price-section-grid h5, .price-value: hover div.price-section-grid p, .price-value: hover div.price-section-grid h3,
+.price-value: hover div.price-section-grid span {
+    color: #fff;
+    transición: 0,5 s todos;
+    -webkit-transición: 0,5 s todos;
+    -moz-transición: 0,5 s todos;
+    -o-transición: 0,5 s todos;
+    -ms-transición: 0,5 s todos;
+}
+
+.price-value: hover div.price-section-grid ul li {
+    color: # c2e1ff;
+}
+
+.precio-valor: n-ésimo hijo (3) {
+    margen derecho: 0;
+}
+
+.price-value: hover {
+    transformar: escala (1.05);
+    -webkit-transform: escala (1.05);
+    -moz-transform: escala (1.05);
+    -o-transformar: escala (1.05);
+    -ms-transform: escala (1.05);
+    índice z: 1;
+    borde: ninguno;
+    -webkit-transition: todos los 0.5s de entrada y salida;
+    -moz-transición: todos los 0.5s de entrada y salida;
+    -o-transición: todos los 0.5s de entrada y salida;
+    transición: todos los 0,5 segundos de entrada y salida;
+}
+
+.work-section {
+    acolchado: 6em 0;
+}
+
+.work-section-head h3 {
+    color: # 394b50;
+    tamaño de fuente: 2.2em;
+    peso de fuente: 900;
+    transformación de texto: mayúsculas;
+}
+
+.work-section-head p {
+    color: # 394b50;
+    tamaño de fuente: 1.2em;
+    peso de fuente: 500;
+}
+
+.work-section-grid {
+    margen superior: 4em;
+    posición: relativa;
+}
+
+span.arrow1 {
+    posición: absoluta;
+    superior: -35px;
+    derecha: -64px;
+}
+
+span.arrow2 {
+    posición: absoluta;
+    superior: 95px;
+    derecha: -64px;
+}
+
+.work-section-grid h4 {
+    color: # 394b50;
+    familia de fuentes: 'Lato', sans-serif;
+    tamaño de fuente: 1.5em;
+    peso de fuente: 700;
+    margen inferior: 0.8em;
+    transformación de texto: mayúsculas;
+    margen superior: 2em;
+}
+
+.work-section-grid p {
+    color: # 7b7b7b;
+    tamaño de fuente: 0.95em;
+    peso de fuente: 400;
+    altura de línea: 1.8em;
+    margen inferior: 6em;
+}
+
+un trabajo {
+    color: #fff;
+    familia de fuentes: 'Lato', sans-serif;
+    tamaño de fuente: 1em;
+    decoración de texto: ninguna;
+    fondo: # E83035;
+    transformación de texto: mayúsculas;
+    peso de fuente: 400;
+    relleno: 11px 23px;
+    radio del borde: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-radio-borde: 4px;
+    -ms-border-radius: 4px;
+}
+
+a.work:hover {
+    fondo: # 394b50;
+}
+
+/ * ------------ Clientes --------- * /
+.container-clientes {
+    bloqueo de pantalla;
+    ancho: auto;
+    alineación de texto: centro;
+    margen superior: 30px;
+}
+
+.container-clientes> * {
+    pantalla: bloque en línea;
+    margen: 10px 20px;
+    ancho máximo: 80%;
+}
+
+.client {
+    flotador izquierdo;
+    ancho: 25%;
+    margen derecho: 6%;
+}
+
+.client img {
+    ancho: 100%;
+}
+
+
+.happy-clients {
+    fondo: # 7EBF7C;
+    acolchado: 7em 0;
+}
+
+.happy-clients-head h3 {
+    color: #fff;
+    tamaño de fuente: 2.2em;
+    peso de fuente: 900;
+    transformación de texto: mayúsculas;
+}
+
+.happy-clients-head p {
+    color: #fff;
+    tamaño de fuente: 1.2em;
+    peso de fuente: 500;
+}
+
+
+.span_66 {
+    margen derecho: 0;
+}
+
+img.open {
+    margen: 0 6px 9px 0px;
+}
+
+img.closeq {
+    margen: 6px 0px 0px 11px;
+}
+
+
+.form input [type = "text"] {
+    ancho: 90%;
+    color: # 000;
+    tamaño de fuente: 1em;
+    relleno: 14px 14px 14px 0;
+    borde: ninguno;
+    esquema: ninguno;
+    fondo: #fff;
+}
+
+.form input [type = "email"] {
+    ancho: 90%;
+    color: # 000;
+    tamaño de fuente: 1em;
+    relleno: 14px 14px 14px 0;
+    borde: ninguno;
+    esquema: ninguno;
+    fondo: #fff;
+}
+
+.form formulario li {
+    pantalla: bloque en línea;
+}
+
+.formulario {
+    margen: 3em 5em 5em 5em;
+}
+
+.form formulario li {
+    radio del borde: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-radio-borde: 3px;
+    estilo de lista: ninguno;
+    flotador izquierdo;
+    ancho: 100%;
+    fondo: #fff;
+    margen derecho: 1em;
+    margen inferior: 10px;
+    borde: 1px sólido #cbcbcb;
+}
+
+.form formulario de entrada [tipo = "enviar"] {
+    color: #fff;
+    margen superior: 0.9em;
+    transformación de texto: mayúsculas;
+    tamaño de fuente: 1em;
+    peso de fuente: 300;
+    borde: ninguno;
+    fondo: # E83035;
+    relleno: 14px 0px;
+    ancho: 100%;
+    esquema: ninguno;
+    radio del borde: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-radio-borde: 4px;
+    -ms-border-radius: 4px;
+}
+
+.form formulario de entrada [tipo = "enviar"]: hover {
+    fondo: # 394b50;
+}
+
+.bottom-menu ul li {
+    pantalla: bloque en línea;
+    margen: 0 1em;
+}
+
+.bottom-menu ul li a {
+    tamaño de fuente: 1.05em;
+    familia de fuentes: 'Lato', sans-serif;
+    color: # 394b50;
+    transformación de texto: mayúsculas;
+    peso de fuente: 500;
+    decoración de texto: ninguna;
+}
+
+.bottom-menu ul li a: hover {
+    color: # E83035;
+}
+
+.footer {
+    fondo: #fff;
+}
+
+.copyright p {
+    color: # e73338;
+    tamaño de fuente: 8px;
+    peso de fuente: 700;
+}
+
+.copyright pa {
+    color: # e73338;
+}
+
+.social-icons i {
+    altura: 25px;
+    ancho: 25px;
+    fondo: url (../ images / img-sprite.png) sin repetición 0px 0px;
+    pantalla: bloque en línea;
+    margen: 0 0.5em;
+}
+
+i.twitter {
+    posición de fondo: -75px 0px;
+}
+
+i.twitter: hover {
+    posición de fondo: -75px -25px;
+}
+
+i.facebook {
+    posición de fondo: -100px 0px;
+}
+
+i.facebook: hover {
+    posición de fondo: -100px -25px;
+}
+
+i.googlepluse {
+    posición de fondo: -125px 0px;
+}
+
+i.googlepluse: hover {
+    posición de fondo: -125px -25px;
+}
+
+i.linkedin {
+    posición de fondo: -150px 0px;
+}
+
+i.linkedin: hover {
+    posición de fondo: -150px -25px;
+}
+
+p.call {
+    tamaño de fuente: 1.6em;
+    familia de fuentes: 'Lato', sans-serif;
+    color: # 394b50;
+    peso de fuente: 700;
+    margen: 1em 0;
+}
+
+i.phone {
+    altura: 25px;
+    ancho: 25px;
+    fondo: url (../ images / img-sprite.png) sin repetición -175px 0px;
+    pantalla: bloque en línea;
+    alineación vertical: sub;
+}
+
+i.ear-phones {
+    altura: 85px;
+    ancho: 85px;
+    fondo: url (../ images / img-sprite.png) sin repetición -200px 0px;
+    pantalla: bloque en línea;
+}
+
+i.planes-a {
+    altura: 85px;
+    ancho: 85px;
+    fondo: url (../ images / img-sprite.png) no-repeat -200px -80px;
+    pantalla: bloque en línea;
+}
+
+yo cerré {
+    altura: 85px;
+    ancho: 85px;
+    fondo: url (../ images / img-sprite.png) sin repetición -285px 0px;
+    pantalla: bloque en línea;
+}
+
+i.planes-b {
+    altura: 85px;
+    ancho: 85px;
+    fondo: url (../ images / img-sprite.png) sin repetición -285px -80px;
+    pantalla: bloque en línea;
+}
+
+i.cloud {
+    altura: 85px;
+    ancho: 85px;
+    fondo: url (../ images / img-sprite.png) sin repetición -370px 0px;
+    pantalla: bloque en línea;
+}
+
+i.planes-c {
+    altura: 85px;
+    ancho: 85px;
+    fondo: url (../ images / img-sprite.png) no-repeat -370px -80px;
+    pantalla: bloque en línea;
+}
+
+i.done {
+    altura: 85px;
+    ancho: 85px;
+    fondo: url (../ images / img-sprite.png) sin repetición -455px 0px;
+    pantalla: bloque en línea;
+}
+
+i.planes-d {
+    altura: 85px;
+    ancho: 85px;
+    fondo: url (../ images / img-sprite.png) sin repetir -455px -80px;
+    pantalla: bloque en línea;
+}
+
+.mapa {
+    borde inferior: 1px sólido # e3e7ec;
+    margen inferior: 3em;
+    fondo acolchado: 3em;
+    posición: relativa;
+}
+
+.map img {
+    ancho: 100%;
+}
+
+.localización {
+    posición: absoluta;
+    arriba: 70px;
+    izquierda: 400px;
+}
+
+.bottom-logo img {
+    ancho: 19%;
+}
+
+
+#hasta arriba {
+    pantalla: ninguna;
+    decoración de texto: ninguna;
+    posición: fija;
+    abajo: 10px;
+    derecha: 10px;
+    desbordamiento: oculto;
+    ancho: 48px;
+    altura: 48px;
+    borde: ninguno;
+    sangría de texto: 100%;
+    background: url (../ images / up-arrow.png) sin repetición 8.8px 12px # 1E87C7;
+    opacidad: 0,4;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-radio-borde: 50%;
+    -ms-border-radius: 50%;
+}
+
+/ * - el diseño de respuesta comienza-aquí - * /
+
+@media pantalla y (ancho máximo: 1440px) {
+    .sobre la derecha {
+        acolchado: 7em 8em 0;
+    }
+}
+
+@media pantalla y (ancho máximo: 1366px) {
+    .about_right p {
+        tamaño de fuente: 1.2em;
+    }
+
+    .sobre la derecha {
+        acolchado: 2em 2em 0;
+    }
+
+    .service-section-grid {
+        margen superior: 3em;
+    }
+}
+
+@media pantalla y (ancho máximo: 1280px) {
+    .top-menu ul li a {
+        tamaño de fuente: 0.951em;
+    }
+
+    .header {
+        acolchado: 1.7em 0;
+    }
+
+    .banner-info h2 {
+        tamaño de fuente: 2.4em;
+        acolchado superior: 2em;
+    }
+
+    .right-grid-1 {
+        ancho: 60%;
+    }
+
+    .banner {
+        fondo acolchado: 20em;
+        margen inferior: 7em;
+    }
+
+    .right-grid-1 {
+        altura mínima: 365px;
+    }
+
+    .sobre la derecha {
+        acolchado: 5em 5em 0;
+    }
+
+    .happy-clients {
+        acolchado: 5em 0;
+    }
+}
+
+@media pantalla y (ancho máximo: 1024px) {
+    .top-menu ul li a {
+        tamaño de fuente: 0.9em;
+        relleno: 6px 13px;
+    }
+
+    .top-menu ul li a.active {
+        relleno: 6px 13px;
+    }
+
+    .top-menu ul li a: hover {
+        relleno: 6px 13px;
+    }
+
+    .header {
+        acolchado: 1.5em 0;
+    }
+
+    .banner-info h2 {
+        tamaño de fuente: 2.1em;
+        acolchado superior: 1.5em;
+    }
+
+    .banner-info p {
+        tamaño de fuente: 1em;
+        margen: 0.1em 0 0.9em 0;
+    }
+
+    .name, .mail, .num {
+        margen: 8px 4px 9px 6px;
+    }
+
+    .details input [type = "text"] {
+        relleno: 12px 12px 12px 0;
+    }
+
+    .details formulario de entrada [tipo = "enviar"] {
+        relleno: 12px 0px;
+        ancho: 18%;
+    }
+
+    .detalles {
+        margen: 2.8em 0 4em 0;
+    }
+
+    .right-grid-1 {
+        altura mínima: 320px;
+        izquierda: 190px;
+    }
+
+    .banner {
+        fondo acolchado: 17em;
+        margen inferior: 7em;
+    }
+
+    .service-section-head h3, .price-section-head h3, .work-section-head h3, .happy-clients-head h3, .contact-section-head h3 {
+        tamaño de fuente: 1.9em;
+    }
+
+    .service-section-head p, .price-section-head p, .work-section-head p, .happy-clients-head p, .contact-section-head p {
+        tamaño de fuente: 1.05em;
+    }
+
+    .icon {
+        ancho: 16%;
+    }
+
+    .icon-text {
+        ancho: 82%;
+        margen superior: 0,7em;
+    }
+
+    .service-section-grid h4 {
+        tamaño de fuente: 1.1em;
+        margen inferior: 0.5em;
+    }
+
+    .service-section-grid p {
+        tamaño de fuente: 0.9em;
+    }
+
+    .service-section-grid {
+        margen superior: 2.5em;
+    }
+
+    .about_right h3 {
+        tamaño de fuente: 2em;
+    }
+
+    .about_right p {
+        tamaño de fuente: 0.9em;
+    }
+
+    .sobre la derecha {
+        acolchado: 3em 3.5em 0;
+    }
+
+    .service-section {
+        acolchado: 5em 0;
+    }
+
+    .price-section {
+        acolchado: 5em 0;
+    }
+
+    .valor del precio {
+        margen superior: 4.5em;
+    }
+
+    .work-section {
+        acolchado: 5em 0;
+    }
+
+
+    .client {
+        ancho: 24%;
+        margen derecho: 5%;
+        margen superior: 2%;
+    }
+
+    .form input [type = "text"] {
+        relleno: 12px 12px 12px 0;
+    }
+
+    .form formulario de entrada [tipo = "enviar"] {
+        relleno: 12px 0;
+    }
+
+    .work-section-grid {
+        margen superior: 6.5em;
+    }
+
+    .work-section-grid p {
+        margen inferior: 5em;
+    }
+
+    .happy-clients-grid h4 {
+        color: # 000;
+        tamaño de fuente: 3em;
+        familia de fuentes: 'Lato', sans-serif;
+        peso de fuente: 400;
+        transformación de texto: mayúsculas;
+        alineación de texto: centro;
+        acolchado superior: 1em;
+    }
+
+    .bottom-menu ul li a {
+        tamaño de fuente: 1em;
+    }
+
+
+    .mapa {
+        margen inferior: 2.5em;
+        fondo acolchado: 2.5em;
+    }
+
+    .social-icons i {
+        margen: 0 0.25em;
+    }
+
+    p.call {
+        tamaño de fuente: 1.4em;
+        margen: 0.8em 0;
+    }
+
+    .price-section-grid h5 {
+        tamaño de fuente: 1.5em;
+        margen inferior: 0,7em;
+    }
+
+    .price-section-grid h3 {
+        tamaño de fuente: 2.8em;
+    }
+
+    .price-section-grid ul li {
+        tamaño de fuente: 1em;
+        acolchado: 0.5em;
+    }
+
+    .valor del precio {
+        margen superior: 4em;
+        acolchado: 3em 1.8em 4em 1.8em;
+    }
+}
+
+@media pantalla y (ancho máximo: 800px) {
+    span.menu {
+        color: # 2583C6;
+        tamaño de fuente: 35px;
+        ancho: 35px;
+        altura: 35px;
+        pantalla: bloque en línea;
+        flotar derecho;
+        cursor: puntero;
+        margen superior: 10px;
+    }
+
+    .menu principal {
+        ancho: 100%;
+        pantalla: ninguna;
+        alineación de texto: centro;
+        fondo: #fff;
+        acolchado: 0;
+    }
+
+    .top-menu ul {
+        flotar: ninguno;
+        ancho: 100%;
+    }
+
+    .top-menu ul li {
+        bloqueo de pantalla;
+        flotar: ninguno;
+    }
+
+    .top-menu ul li a {
+        bloqueo de pantalla;
+        relleno: 10px 0px;
+    }
+
+    .top-menu ul li a.active {
+        relleno: 10px 13px;
+    }
+
+    .top-menu ul li a: hover {
+        relleno: 10px 13px;
+    }
+
+    .header {
+        acolchado: 1.2em 0;
+    }
+
+    .about_left {
+        ancho: 50%;
+        flotador izquierdo;
+    }
+
+    .sobre la derecha {
+        ancho: 50%;
+        flotar derecho;
+    }
+
+    .banner-info h2 {
+        tamaño de fuente: 1.85em;
+        acolchado superior: 1.3em;
+    }
+
+    .banner-info p {
+        tamaño de fuente: 0.95em;
+        margen: 0.1em 0 0em 0;
+    }
+
+    .details input [type = "text"] {
+        ancho: 80%;
+    }
+
+    .details form li {
+        ancho: 25%;
+        margen derecho: 0.3em;
+    }
+
+    .details formulario de entrada [tipo = "enviar"] {
+        relleno: 12px 0px;
+        ancho: 22%;
+    }
+
+    .right-grid-1 {
+        ancho: 65%;
+        altura mínima: 265px;
+        izquierda: 130px;
+    }
+
+    .banner {
+        fondo acolchado: 14em;
+        margen inferior: 7em;
+    }
+
+    .service-section {
+        acolchado: 4em 0;
+    }
+
+    .service-section-head h3, .price-section-head h3, .work-section-head h3, .happy-clients-head h3, .contact-section-head h3, .about_right h3 {
+        tamaño de fuente: 1.7em;
+    }
+
+    .service-section-head p, .price-section-head p, .work-section-head p, .happy-clients-head p, .contact-section-head p {
+        tamaño de fuente: 1em;
+    }
+
+    .icon {
+        ancho: 11%;
+    }
+
+    .icon-text {
+        ancho: 87%;
+        margen superior: 0.5em;
+    }
+
+    .service-section-grid {
+        margen superior: 1.8em;
+    }
+
+    .service-section-grid h4 {
+        tamaño de fuente: 1em;
+        margen inferior: 0.4em;
+    }
+
+    .about_right p {
+        margen: 1em 0 2.5em 0;
+        desbordamiento: oculto;
+    }
+
+    .sobre la derecha {
+        acolchado: 2em 2.5em 0;
+    }
+
+    .about_right a {
+        tamaño de fuente: 1em;
+        relleno: 8px 16px;
+    }
+
+    .price-section {
+        acolchado: 4em 0;
+    }
+
+    .price-section-grid h5 {
+        tamaño de fuente: 1.2em;
+        margen inferior: 0,7em;
+    }
+
+    .price-section-grid h3 {
+        tamaño de fuente: 2.5em;
+    }
+
+    .price-section-grid ul li {
+        tamaño de fuente: 0.9em;
+        acolchado: 0.6em;
+    }
+
+    .price-section-grid p {
+        tamaño de fuente: 1em;
+    }
+
+    .price-section-grid a {
+        tamaño de fuente: 1em;
+        relleno: 9px 18px;
+    }
+
+    .valor del precio {
+        margen superior: 3em;
+        acolchado: 2.5em 1.7em 3em 1.7em;
+    }
+
+    .work-section {
+        acolchado: 4em 0;
+    }
+
+    .copyright p {
+        tamaño de fuente: 1em;
+    }
+
+    .bottom-menu ul li a {
+        tamaño de fuente: 0.95em;
+    }
+
+    .bottom-menu ul li {
+        margen: 0 0.6em;
+    }
+
+    p.call {
+        tamaño de fuente: 1.3em;
+    }
+
+    .client {
+        ancho: 22%;
+        margen superior: 0%;
+    }
+
+    .happy-clients {
+        acolchado: 3.5em 0;
+    }
+
+    .work-section-grid {
+        margen superior: 6em;
+        ancho: 25%;
+        flotador izquierdo;
+        relleno: 0 10px;
+    }
+
+    .work-section-grid h4 {
+        tamaño de fuente: 1.3em;
+        margen inferior: 0.6em;
+        margen superior: 3.8em;
+    }
+
+    .work-section-grid p {
+        tamaño de fuente: 0.9em;
+    }
+
+    .service-section-grid {
+        altura: auto;
+    }
+}
+
+@media pantalla y (ancho máximo: 640px) {
+    .banner-info h2 {
+        tamaño de fuente: 1.6em;
+        acolchado superior: 1.2em;
+    }
+
+    .banner-info p {
+        tamaño de fuente: 0.875em;
+    }
+
+    .details input [type = "text"] {
+        ancho: 76%;
+        relleno: 9px 10px 9px 0;
+    }
+
+    .name, .mail, .num {
+        margen: 5px 2px 6px 4px;
+    }
+
+    .details formulario de entrada [tipo = "enviar"] {
+        relleno: 9px 0px;
+        tamaño de fuente: 0.9em;
+    }
+
+    .detalles {
+        margen: 2em 0 3em 0;
+    }
+
+    .right-grid-1 {
+        altura mínima: 215px;
+        izquierda: 108px;
+    }
+
+    .banner {
+        fondo acolchado: 12em;
+        margen inferior: 6em;
+    }
+
+    .service-section {
+        acolchado: 3em 0;
+    }
+
+    .service-section-head h3, .price-section-head h3, .work-section-head h3, .happy-clients-head h3, .contact-section-head h3, .about_right h3 {
+        tamaño de fuente: 1.6em;
+    }
+
+    .service-section-head p, .price-section-head p, .work-section-head p, .happy-clients-head p, .contact-section-head p {
+        tamaño de fuente: 0.95em;
+    }
+
+    .icon {
+        ancho: 13%;
+    }
+
+    .icon-text {
+        ancho: 85%;
+    }
+
+    .service-section-grid h4 {
+        tamaño de fuente: 0.95em;
+    }
+
+    .service-section-grid {
+        margen superior: 1,5 em;
+    }
+
+    .about_right p {
+        margen: 0.5em 0 2em 0;
+        desbordamiento: oculto;
+    }
+
+    .about_right a {
+        tamaño de fuente: 0.95em;
+        relleno: 6px 14px;
+    }
+
+    .sobre la derecha {
+        acolchado: 2em 2em 0;
+    }
+
+    .price-section {
+        acolchado: 3em 0;
+    }
+
+    .price-section-grid h5 {
+        tamaño de fuente: 1em;
+        margen inferior: 0,7em;
+    }
+
+    .price-section-grid h3 {
+        tamaño de fuente: 2.2em;
+    }
+
+    .price-section-grid ul li {
+        tamaño de fuente: 0.875em;
+        acolchado: 0.5em;
+    }
+
+    .price-section-grid p {
+        tamaño de fuente: 0.95em;
+    }
+
+    .price-section-grid a {
+        tamaño de fuente: 0.9em;
+        relleno: 7px 16px;
+    }
+
+    .valor del precio {
+        margen superior: 2.5em;
+        acolchado: 2em 0.5em 2em 0.5em;
+    }
+
+    .price-section-grid ul {
+        margen: 2em 0;
+    }
+
+    .happy-clients-grid p {
+        tamaño de fuente: 0.9em;
+    }
+
+    .work-section {
+        acolchado: 3em 0;
+    }
+
+    .form input [type = "text"] {
+        ancho: 84%;
+    }
+
+    .form input [type = "text"] {
+        relleno: 9px 10px 9px 0;
+    }
+
+    .form formulario de entrada [tipo = "enviar"] {
+        relleno: 9px 0;
+        tamaño de fuente: 0.9em;
+    }
+
+    .formulario {
+        margen: 2em 0 3em 0;
+    }
+
+
+    .bottom-menu ul li a {
+        tamaño de fuente: 0.89em;
+    }
+
+    .bottom-menu ul li {
+        margen: 0 0.3em;
+    }
+
+
+}
+
+@media pantalla y (ancho máximo: 480px) {
+    .work-section-grid {
+        ancho: 50%;
+    }
+
+    span.arrow2 {
+        pantalla: ninguna;
+    }
+
+    .work-section-grid h4 {
+        tamaño de fuente: 1.2em;
+        margen inferior: 0.5em;
+        margen superior: 0.5em;
+    }
+
+    .work-section-grid p {
+        margen inferior: 3em;
+    }
+
+    .work-section-grid {
+        margen superior: 3em;
+    }
+
+    .work-section-head {
+        margen inferior: 2.5em;
+    }
+
+    span.menu {
+        tamaño de fondo: 25px;
+        margen superior: 12px;
+    }
+
+    .logo {
+        ancho: 11%;
+    }
+
+    .logo img {
+        ancho: 100%;
+    }
+
+    .banner-info h2 {
+        tamaño de fuente: 1.4em;
+        acolchado superior: 1em;
+    }
+
+    .banner-info p {
+        altura: 20px;
+        desbordamiento: oculto;
+    }
+
+    .detalles de li: nth-child (3) {
+        pantalla: ninguna;
+    }
+
+    .details form li {
+        ancho: 33,33%;
+    }
+
+    .details formulario de entrada [tipo = "enviar"] {
+        ancho: 30%;
+        relleno: 7px 0px;
+    }
+
+    .right-grid-1 {
+        altura mínima: 167px;
+        izquierda: 76px;
+    }
+
+    .details input [type = "text"] {
+        relleno: 7px 8px 7px 0;
+    }
+
+    .name, .mail, .num {
+        margen: 3px -1px 2px 2px;
+    }
+
+    .detalles {
+        margen: 1.5em 0 2em 0;
+    }
+
+    .banner {
+        fondo acolchado: 9em;
+        margen inferior: 4em;
+    }
+
+    .service-section-head h3, .price-section-head h3, .work-section-head h3, .happy-clients-head h3, .contact-section-head h3, .about_right h3 {
+        tamaño de fuente: 1.4em;
+    }
+
+    .service-section-head {
+        margen inferior: 2em;
+    }
+
+    .service-grid {
+        acolchado: 0;
+    }
+
+    .icon {
+        ancho: 16%;
+    }
+
+    .icon-text {
+        ancho: 82%;
+        margen superior: 1em;
+    }
+
+    .service-section-grid h4 {
+        tamaño de fuente: 0.9em;
+    }
+
+    .service-section-grid p {
+        altura de línea: 1.7em;
+    }
+
+    .about_left {
+        ancho: 55%;
+    }
+
+    .sobre la derecha {
+        ancho: 45%;
+        acolchado: 1.2em 1.2em 0;
+    }
+
+    .about_right p {
+        margen: 0.5em 0 1.5em 0;
+    }
+
+    .about_right a {
+        tamaño de fuente: 0.9em;
+        relleno: 5px 14px;
+    }
+
+
+    .client {
+        margen superior: 3%;
+    }
+
+    .price-section {
+        acolchado: 2.5em 0;
+    }
+
+    .price-section-grid h5 {
+        tamaño de fuente: 0.9em;
+        margen inferior: 0.5em;
+    }
+
+    .price-section-grid h3 {
+        tamaño de fuente: 2em;
+    }
+
+    .price-section-grid ul li {
+        tamaño de fuente: 0.8em;
+        acolchado: 0.5em;
+    }
+
+    .price-section-grid p {
+        tamaño de fuente: 0.9em;
+    }
+
+    .price-section-grid a {
+        tamaño de fuente: 0.9em;
+        relleno: 6px 14px;
+    }
+
+    .valor del precio {
+        margen superior: 2em;
+        acolchado: 1.8em 0.3em 1.8em 0.3em;
+    }
+
+    .price-section-grid ul {
+        margen: 1,5 em 0;
+    }
+
+    .form input [type = "text"] {
+        relleno: 7px 10px 7px 0;
+        ancho: 80%;
+    }
+
+    .form formulario de entrada [tipo = "enviar"] {
+        relleno: 8px 0;
+        tamaño de fuente: 0.875em;
+        ancho: 24%;
+    }
+
+    .form formulario li {
+        margen derecho: 0.5em;
+    }
+
+    .bottom-menu ul li a {
+        tamaño de fuente: 0.9em;
+    }
+
+    .bottom-menu ul li {
+        margen: 0.3em;
+    }
+}
+
+@media pantalla y (ancho máximo: 320px) {
+    /*--i.s1 {
+        ancho: 60px;
+        altura: 70px;
+        background: url ('../ images / img-sprite.png') no-repeat -551px -1px;
+    }
+    .service-section-grid: hover i.s1 {
+        background: url ('../ images / img-sprite.png') no-repeat -551px -71px;
+    }
+    i.s2 {
+        ancho: 60px;
+        altura: 70px;
+        background: url ('../ images / img-sprite.png') no-repeat -551px -1px;
+    }
+    .service-section-grid: hover i.s1 {
+        background: url ('../ images / img-sprite.png') no-repeat -551px -71px;
+    } - * /
+    .localización {
+        arriba: 14px;
+        izquierda: 118px;
+    }
+
+    span.menu {
+        tamaño de fondo: 22px;
+        margen superior: 9px;
+    }
+
+    .logo {
+        ancho: 15%;
+    }
+
+    .icon {
+        ancho: 24%;
+    }
+
+    .icon-text {
+        ancho: 74%;
+    }
+
+    .valor del precio {
+        ancho: 92%;
+        margen: 0 4%;
+        acolchado: 2em 1.5em 2em 1.5em;
+        margen superior: 2em;
+    }
+
+    .copyright p {
+        tamaño de fuente: 0.95em;
+        altura de línea: 1.6em;
+    }
+
+    .bottom-menu ul li a {
+        tamaño de fuente: 0.89em;
+    }
+
+    .bottom-menu ul li {
+        margen: 0.3em 1em;
+    }
+
+    .localización {
+        pantalla: ninguna;
+    }
+
+    .mapa {
+        margen inferior: 1,5 em;
+        fondo acolchado: 1.5em;
+    }
+
+    .form formulario li {
+        margen inferior: 11px;
+        ancho: 100%;
+        margen derecho: 0;
+    }
+
+    .form formulario de entrada [tipo = "enviar"] {
+        ancho: 50%;
+        margen: 0 automático;
+    }
+
+    .service-section-head p, .price-section-head p, .work-section-head p, .happy-clients-head p, .contact-section-head p {
+        tamaño de fuente: 0.85em;
+    }
+
+    .client {
+        ancho: 50%;
+        margen izquierdo: 25%;
+    }
+
+
+    un trabajo {
+        tamaño de fuente: 0.9em;
+        relleno: 10px 20px;
+    }
+
+    .work-section {
+        acolchado: 2em 0;
+    }
+
+    .about_left {
+        ancho: 100%;
+    }
+
+    .sobre la derecha {
+        ancho: 100%;
+    }
+
+    .service-section-grid p {
+        altura: 83px;
+        desbordamiento: oculto;
+    }
+
+    .banner-info h2 {
+        tamaño de fuente: 1.11em;
+        acolchado superior: 1.1em;
+    }
+
+    .header {
+        acolchado: 1em 0;
+    }
+
+    .details form li {
+        ancho: 48%;
+        margen inferior: 10px;
+    }
+
+    .details formulario de entrada [tipo = "enviar"] {
+        ancho: 55%;
+    }
+
+    .right-grid-1 {
+        altura mínima: 145px;
+        izquierda: 11px;
+        ancho: 90%;
+    }
+
+    .banner {
+        fondo acolchado: 7em;
+    }
+
+    .top-menu ul li a.active {
+        relleno: 7px 0px;
+    }
+
+    .top-menu ul li a: hover {
+        relleno: 7px 0px;
+    }
+
+    .top-menu ul li a {
+        relleno: 7px 0px;
+    }
+}
+
+
+/ * --------- Contáctanos ---- * /
+
+:: - webkit-input-placeholder {
+    / * WebKit, Blink, Edge * /
+    color: # 777777;
+    peso de fuente: 300;
+}
+
+: -moz-placeholder {
+    / * Mozilla Firefox 4 a 18 * /
+    color: # 777777;
+    opacidad: 1;
+    peso de fuente: 300;
+}
+
+:: - moz-placeholder {
+    / * Mozilla Firefox 19+ * /
+    color: # 777777;
+    opacidad: 1;
+    peso de fuente: 300;
+}
+
+: -ms-input-placeholder {
+    / * Internet Explorer 10-11 * /
+    color: # 777777;
+    peso de fuente: 300;
+}
+
+:: - ms-input-placeholder {
+    / * Microsoft Edge * /
+    color: # 777777;
+    peso de fuente: 300;
+}
+
+
+.dirección-de-contacto-único .icon {
+    color: # 2583C6;
+    tamaño de fuente: 30px;
+}
+
+
+.form-container input, .form-container textarea {
+    borde: 1px sólido #dbdbdb;
+    radio del borde: 5px;
+}
+
+
+.input-group-icon {
+    posición: relativa;
+}
+
+.input-group-icon .icon {
+    posición: absoluta;
+    izquierda: 20px;
+    arriba: 0;
+    altura de línea: 40px;
+    índice z: 3;
+}
+
+.input-group-icon .icon i {
+    color: # 797979;
+}
+
+.input-group-icon .single-input {
+    padding-left: 45px;
+}
+
+
+.single-input {
+    bloqueo de pantalla;
+    ancho: 100%;
+    altura de línea: 40px;
+    borde: ninguno;
+    esquema: ninguno;
+    fondo: # f9f9ff;
+    relleno: 0 20px;
+}
+
+# form-contact .input-group-icon: not (: first-child) {
+    margen: 10px 0;
+}
+
+.single-input: focus {
+    esquema: ninguno;
+}
+
+.single-textarea {
+    bloqueo de pantalla;
+    ancho: 100%;
+    altura de línea: 40px;
+    borde: ninguno;
+    esquema: ninguno;
+    fondo: # f9f9ff;
+    relleno: 0 20px;
+    altura: 100px;
+    redimensionar: ninguno;
+}
+
+.single-textarea: focus {
+    esquema: ninguno;
+}
+
+.single-input-primary {
+    bloqueo de pantalla;
+    ancho: 100%;
+    altura de línea: 40px;
+    borde: 1px transparente sólido;
+    esquema: ninguno;
+    fondo: # f9f9ff;
+    relleno: 0 20px;
+}
+
+.single-input-primary: focus {
+    esquema: ninguno;
+    borde: 1px sólido # 3b58f7;
+}
+
+.single-input-accent {
+    bloqueo de pantalla;
+    ancho: 100%;
+    altura de línea: 40px;
+    borde: 1px transparente sólido;
+    esquema: ninguno;
+    fondo: # f9f9ff;
+    relleno: 0 20px;
+}
+
+.single-input-accent: focus {
+    esquema: ninguno;
+    borde: 1px sólido # eb6b55;
+}
+
+
+.contact-page-area .form-area input {
+    relleno: 15px;
+}
+
+.contact-page-area .form-area input, .contact-page-area .form-area textarea {
+    radio de borde: 0;
+    tamaño de fuente: 12px;
+    altura de línea: 1,2;
+    borde: 10px negro sólido! importante;
+}
+
+.contact-page-area .form-area textarea {
+    altura: 178px;
+    margen superior: 0px;
+}
+
+.contact-page-area .form-area .primary-btn {
+    -webkit-transition: todos los 0.3s facilitan 0s;
+    -moz-transición: todos los 0.3s facilitan 0s;
+    -o-transición: todos los 0.3s facilitan 0s;
+    transición: todos los 0.3s facilitan 0s;
+}
+
+.contact-page-area .form-area .primary-btn: hover {
+    borde: 1px sólido # 3b58f7;
+    color: # 3b58f7! important;
+}
+
+@media (ancho máximo: 960 px) {
+    .contact-page-area .address-wrap {
+        margen inferior: 50px;
+    }
+}
+
+.contact-page-area .single-contact-address {
+    margen inferior: 20px;
+}
+
+.contact-page-area .single-contact-address h5 {
+    peso de fuente: 600;
+    tamaño de fuente: 16px;
+    margen inferior: 5px;
+}
+
+.contact-page-area .single-contact-address .lnr {
+    tamaño de fuente: 30px;
+    peso de fuente: 500;
+    color: # 3b58f7;
+    margen derecho: 30px;
+}
+
+
+.primary-btn {
+    altura: 50px;
+    altura de línea: 50px;
+    padding-left: 45px;
+    padding-right: 45px;
+    radio del borde: 0px;
+    borde: 1px transparente sólido;
+    origen-fondo: cuadro-borde;
+    color: #fff;
+    pantalla: bloque en línea;
+    peso de fuente: 500;
+    posición: relativa;
+    -webkit-transition: todos los 0.3s facilitan 0s;
+    -moz-transición: todos los 0.3s facilitan 0s;
+    -o-transición: todos los 0.3s facilitan 0s;
+    transición: todos los 0.3s facilitan 0s;
+    cursor: puntero;
+    tamaño de fuente: 1em;
+    color de fondo: # 2583C6;
+    radio del borde: 5px;
+}
+
+.primary-btn: focus {
+    esquema: ninguno;
+}
+
+.primary-btn: hover {
+    fondo: transparente;
+    color: # 3b58f7;
+    color del borde: # 3b58f7;
+}
+
+
+.genric-btn {
+    pantalla: bloque en línea;
+    esquema: ninguno;
+    altura de línea: 40px;
+    relleno: 0 30px;
+    tamaño de fuente: 1em;
+    alineación de texto: centro;
+    decoración de texto: ¡ninguna! importante;
+    peso de fuente: 500;
+    cursor: puntero;
+    -webkit-transition: todos los 0.3s facilitan 0s;
+    -moz-transición: todos los 0.3s facilitan 0s;
+    -o-transición: todos los 0.3s facilitan 0s;
+    transición: todos los 0.3s facilitan 0s;
+}
+
+.genric-btn.green {
+    color: #fff;
+    fondo: # 0DC143;
+    borde: 1px transparente sólido;
+}
+
+.genric-btn.green: hover {
+    color: # 0DC143;
+    borde: 1px sólido # 0DC143;
+    fondo: #fff;
+}
+
+
+.genric-btn.circle {
+    radio del borde: 20px;
+}
+
+
+.genric-btn.arrow {
+    pantalla: -ms-inline-flexbox;
+    pantalla: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: centro;
+    alinear-elementos: centro;
+}
+
+.genric-btn.arrow span {
+    margen izquierdo: 10px;
+}
+
+
+/ * ---------------------- Pie de página ---------------- * /
+/ * Estilos de pie de página
+/ * =================================== * /
+.footer-area {
+    fondo: # 222222;
+}
+
+@media (ancho máximo: 991px) {
+    .footer-area .single-footer-widget {
+        margen inferior: 30px;
+    }
+}
+
+.footer-area .single-footer-widget h4 {
+    color: #fff;
+    margen inferior: 35px;
+}
+
+@media (ancho máximo: 1024px) {
+    .footer-area .single-footer-widget h4 {
+        tamaño de fuente: 18px;
+    }
+}
+
+@media (ancho máximo: 991px) {
+    .footer-area .single-footer-widget h4 {
+        margen inferior: 15px;
+    }
+}
+
+.footer-area .single-footer-widget ul li {
+    margen inferior: 15px;
+}
+
+.footer-area .single-footer-widget ul li a {
+    -webkit-transition: todos los 0.3s facilitan 0s;
+    -moz-transición: todos los 0.3s facilitan 0s;
+    -o-transición: todos los 0.3s facilitan 0s;
+    transición: todos los 0.3s facilitan 0s;
+    color: # 777777;
+}
+
+.footer-area .single-footer-widget ul li a: hover {
+    color: #fff;
+}
+
+.footer-area .single-footer-widget .form-wrap {
+    margen superior: 25px;
+}
+
+.footer-area .single-footer-widget input {
+    altura: 40px;
+    borde: ninguno;
+    ancho: 80%! importante;
+    peso de fuente: 300;
+    fondo: # f9f9ff;
+    color: # 222222;
+    padding-left: 20px;
+    radio de borde: 0;
+    tamaño de fuente: 14px;
+    relleno: 10px;
+}
+
+.footer-area .single-footer-widget input: focus {
+    esquema: ninguno;
+}
+
+.footer-area .single-footer-widget .click-btn {
+    color: #fff;
+    radio de borde: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    relleno: 8px 12px;
+    borde: 0;
+}
+
+.footer-area .single-footer-widget .click-btn span {
+    peso de fuente: 500;
+}
+
+.footer-area .footer-bottom {
+    margen superior: 70px;
+}
+
+.footer-area .footer-bottom .footer-text {
+    color: #fff;
+}
+
+.footer-area .footer-bottom .footer-text a,
+.footer-area .footer-bottom .footer-text span {
+    color: # 46dbf9;
+}
+
+.footer-area .footer-bottom span {
+    peso de fuente: 700;
+}
+
+.footer-area .footer-bottom .footer-social {
+    alineación de texto: centro;
+}
+
+
+.footer-area .footer-bottom .footer-social a {
+    fondo: # 3e4876;
+    margen izquierdo: 5px;
+    ancho: 40px;
+    color: #fff;
+    pantalla: cuadrícula en línea;
+    alineación de texto: centro;
+    altura: 40px;
+    alinear-contenido: centro;
+    -webkit-transition: todos los 0.3s facilitan 0s;
+    -moz-transición: todos los 0.3s facilitan 0s;
+    -o-transición: todos los 0.3s facilitan 0s;
+    transición: todos los 0.3s facilitan 0s;
+}
+
+.footer-area .footer-bottom .social-link {
+    alineación de texto: derecha;
+}
+
+@media (ancho máximo: 991px) {
+    .footer-area .footer-bottom .social-link {
+        alineación de texto: izquierda;
+        margen superior: 30px;
+    }
+}
+
+@media (ancho máximo: 768px) {
+    .img-nosotros {
+        altura: 300px! importante;
+    }
+}
+
+.botones .area del pie .botones .footer-bottom p {
+    tamaño de fuente: 12px;
+}
+
+.botones .footer-area .footer-bottom. p span {
+    tamaño de fuente: 18px;
+}
+
+.copyright-text {
+    color blanco;
+    tamaño de fuente: 10px;
+}
+
+/ * Clases de modificación Cesar Rodriguez * /
+.icono{
+    tamaño de fuente: 50px;
+    color: # 394B50;
+    alineación de texto: centro;
+    -webkit-transition: todos facilitan 0.4s;
+}
+
+.icon-text a {
+    color: # 000000;
+    decoración de texto: ninguna;
+}
+
+.icon a {
+    color: # 394B50;
+    decoración de texto: ninguna;
+}
+
+.services: hover .icon {
+    color: # 2583C6! importante;
+}
+
+.services: coloque el cursor sobre .icon a {
+    color: # 2583C6! importante;
+}
+
+.icon-contact {
+    flotador izquierdo;
+}
+
+.input-group-icon .icon-contact {
+    posición: absoluta;
+    izquierda: 20px;
+    arriba: 0;
+    altura de línea: 40px;
+    índice z: 3;
+}
+
+.input-group-icon .icon-contact i {
+    color: # 797979;
+}
+
+.title-hardware {
+    color: # 2583C6! importante;
+}
+
+.text-title-clarisa {
+    color: # 2583C6! importante;
+}
