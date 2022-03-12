@@ -3,40 +3,16 @@
 	$conection = new Conection();
 	$query = "SELECT * FROM head";
 	$general = mysqli_fetch_array($conection->conection()->query($query));
-
-
-  
-  $array = [
-    ['title' => 'Facturación Electrónica', 'img' => 'icono-factura.png',
-      'questions' => [
-        ['id' => 1, "title" => "¿Que es Facturación Electrónica?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-        ['id' => 6, "title" => "¿Para que sirve Facturación Electrónica?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-        ['id' => 7, "title" => "¿Como uso la Facturación Electrónica?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-      ]
-    ],
-    ['title' => 'Documentos Soporte', 'img' => 'icono-documento.png',
-      'questions' => [
-        ['id' => 2, "title" => "¿Que es Documentos Soporte?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-        ['id' => 8, "title" => "¿Como uso Documentos Soporte?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-        ['id' => 9, "title" => "¿Como descargo Documentos Soporte?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.']
-      ]
-    ],
-    ['title' => 'Nómina Electrónica', 'img' => 'icono-nomina.png',
-      'questions' => [
-        ['id' => 3, "title" => "¿Que es Nómina Electrónica?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.']
-      ]
-    ],
-    ['title' => 'Recepción Documentos', 'img' => 'icono-recepcion.png',
-      'questions' => [
-        ['id' => 4, "title" => "¿Que es Recepción Documentos?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.']
-      ]
-    ],
-    ['title' => 'Soporte', 'img' => 'icono-soporte.png',
-      'questions' => [
-        ['id' => 5, "title" => "¿Que es Soporte?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.']
-      ]
-    ],
-  ];
+  $array = $conection->conection_pdo()->query("Select * From home_detail")->fetchAll(PDO::FETCH_OBJ);
+  foreach($array as $key => $modulo){
+    $questions = $conection->conection_pdo()->query("Select * From question where home_detail_id = $modulo->id order by orden ASC")->fetchAll(PDO::FETCH_OBJ);
+    $array[$key]->questions = $questions;
+    foreach($questions as $llave => $pregunta){
+      $question = $conection->conection_pdo()->query("Select * From detail_question where question_id = $pregunta->id order by orden ASC")->fetchAll(PDO::FETCH_OBJ);
+      $array[$key]->questions[$llave]->preguntas = $question;
+    }
+  }
+  $id = !empty($_GET['option']) ? $_GET['option'] : 1;
 ?>
 <!DOCTYPE html>
 <html>
@@ -189,6 +165,7 @@
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="90">
   <?php include('./php/header.php'); ?>
+  
 
   <div class="text-white s-principal">
     <!-- <img src="https://img.freepik.com/foto-gratis/secretaria-trabajando-documentos-estadisticos_1098-3363.jpg" class="card-img" alt="..."> -->
@@ -216,105 +193,85 @@
       <div class="col-sm-12 col-md-12 col-lg-4">
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <?php foreach ($array as $key => $detail): ?>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-heading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?= $key ?>" aria-expanded="false" aria-controls="flush-collapse<?= $key ?>">
-                <?= $detail['title'] ?>
-                </button>
-              </h2>
-              <div id="flush-collapse<?= $key ?>" class="accordion-collapse collapse" aria-labelledby="flush-heading" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                  <ul>
-                    <?php foreach($detail['questions'] as $question): ?>
-                      <li><a href="#<?= str_replace(" ", "-",$question['title'])?>"><?= $question['title'] ?></a></li>
-                    <?php endforeach ?>
-                  </ul>
+            <?php if(!empty($detail->questions)): ?>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading">
+                  <button class="accordion-button <?= $detail->id == $id ? 'show': 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?= $key ?>" aria-expanded="false" aria-controls="flush-collapse<?= $key ?>">
+                  <?= $detail->title ?>
+                  </button>
+                </h2>
+                <div id="flush-collapse<?= $key ?>" class="accordion-collapse collapse <?= $detail->id == $id ? 'show': '' ?>" aria-labelledby="flush-heading" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <?php foreach($detail->questions as $question): ?>
+                        <?php if($detail->id == $id): ?>
+                          <li>
+                            <a href="#<?= str_replace(" ", "-",$question->title)?>"><?= $question->title ?></a>
+                          </li>
+                        <?php else: ?>
+                          <li>
+                            <a href="<?= $base_url ?>support_detail.php?option=<?= $detail->id?>#<?= str_replace(" ", "-",$question->title)?>"><?= $question->title ?></a>
+                          </li>
+                        <?php endif ?>
+                      <?php endforeach ?>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
+            <?php endif ?>
           <?php endforeach ?>
         </div>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg-8">
+      <div class="col-sm-12 col-md-12 col-lg-8 p-5">
         <?php foreach ($array as $detail): ?>
-          <h2 class="text-center text-capitalize"><?= $detail['title'] ?></h2>
-          <?php foreach($detail['questions'] as $question): ?>
-            <h4 id="<?= str_replace(" ", "-",$question['title'])?>"><?= $question['title'] ?></h4>
-            <p class="p-3">
-              <?= $question['question'] ?>
-            </p>
-          <?php endforeach ?>
-        <?php endforeach ?>
-      </div>
-    </div>
-  </div>
-
-  <!-- <div class="container pt-5 pb-5 preguntas-container">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <?php foreach ($array as $detail): ?>
-          <div class="col preguntas">
-            <div class="card">
-              <div class="img-preguntas">
-                <div>
-                  <img src="./php/img/home/<?= $detail['img'] ?>" class="preguntas card-img-top" alt="...">
+          <?php if($detail->id == $id): ?>
+            <h2 class="text-center text-capitalize"><?= $detail->title ?></h2>
+            <?php foreach($detail->questions as $question): ?>
+              <h4 id="<?= str_replace(" ", "-",$question->title)?>"><?= $question->title ?></h4>
+              <hr>
+              <?php foreach ($question->preguntas as $answer): ?>
+                <div >
+                  <h5><?= $answer->title ?></h5>
+                  <?= $answer->text ?>
+                  <?php if(!empty($answer->img)): ?>
+                    <img src="<?= $base_url ?>php/img/question/<?= $answer->img?>" class="img-fluid" alt="...">
+                  <?php elseif(!empty($answer->video)): ?>
+                    <div class="ratio ratio-16x9">
+                      <?= $answer->video ?>
+                      <!-- <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe> -->
+                    </div>
+                  <?php endif ?>
                 </div>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title text-center"><?= $detail['title'] ?></h5>
-                <ul>
-                  <?php foreach($detail['questions'] as $question): ?>
-                    <li><span onclick="active_modal(<?= $question['id'] ?>)"><i data-feather="chevrons-right"></i> <?= $question['title'] ?></span></li>
-                  <?php endforeach ?>
-                </ul>
-              </div>
-            </div>
-          </div>
+              <?php endforeach ?>
+              <br><br>
+
+            <?php endforeach ?>
+          <?php endif ?>
         <?php endforeach ?>
-    </div>
-  </div> -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="title-modal"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h5 id="sub-title-modal"></h5>
-        <p id="description-modal"></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn my-boton" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
-</div>
-
-
 
   <?php include('./php/footer.php'); ?>
-
+  
   <script src="./php/jquery-3.6.0.min.js"></script>
 	<script>
-	    if(window.screen.width > 400){
-	        window.addEventListener("scroll", scrollFunction);
-	        //window.onscroll = function() {scrollFunction()};
-	        function scrollFunction() {
-	            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-	                $('#menu').removeClass('fondo-transparente').addClass('fondo-gradian');
+    if(window.screen.width > 400){
+      window.addEventListener("scroll", scrollFunction);
+      //window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+          $('#menu').removeClass('fondo-transparente').addClass('fondo-gradian');
 	            } else if(document.body.scrollTop < 50 || document.documentElement.scrollTop > 50) {
 	                $('#menu').removeClass('fondo-gradian').addClass('fondo-transparente');
 	            }else{
 
-	            }
-	        }
-	    }
-	</script>
+              }
+            }
+          }
+          </script>
   <script>
-      feather.replace()
+    feather.replace()
     </script>
 	<script src="https://mischats.com/supportboard/js/min/jquery.min.js"></script>
 	<script id="sbinit" src="https://mischats.com/supportboard/js/main.js?lang=es&amp;mode=1"> </script>
@@ -328,46 +285,47 @@
   <script src="./php/assets/js/chartist-plugin-tooltip.js"></script>
   <script src="./php/assets/js/chartist-plugin-fill-donut.min.js"></script>
   <script src="./php/EasyAutocomplete/jquery.easy-autocomplete.js"></script>
+  
   <script>
-        $(document).ready(function() {
-            $(".regular").slick({
-                dots: true,
+    $(document).ready(function() {
+      $(".regular").slick({
+        dots: true,
                 infinite: true,
                 autoplay: true,
                 slidesToShow: 4,
                 slidesToScroll: 4
+              });
             });
-        });
-        (function (window, document, $) {
-            axios({
+            (function (window, document, $) {
+              axios({
                 method: 'get',
                 url: 'https://facturadorv2.mifacturalegal.com/api/v2/indicators',
                 responseType: 'json'
-            }).then(function (response) {
-               var invoices = parseInt(response.data.data.invoices_national) + parseInt(response.data.data.invoices_export);
+              }).then(function (response) {
+                var invoices = parseInt(response.data.data.invoices_national) + parseInt(response.data.data.invoices_export);
                var noteCredit = parseInt(response.data.data.credit_note);
                var noteDebit = parseInt( response.data.data.debit_note);
                 var CurrentBalanceDonutChart = new Chartist.Pie(
                     "#current-balance-donut-chart-invoices",
                     {
-                        labels: [1, 2],
+                      labels: [1, 2],
                         series: [
-                            { meta: "Completed", value: 80 },
+                          { meta: "Completed", value: 80 },
                             { meta: "Remaining", value: 20 }
-                        ]
-                    },
-                    {
-                        donut: true,
-                        donutWidth: 8,
-                        showLabel: false,
-                        plugins: [
+                          ]
+                        },
+                        {
+                          donut: true,
+                          donutWidth: 8,
+                          showLabel: false,
+                          plugins: [
                             Chartist.plugins.tooltip({
-                                class: "current-balance-tooltip",
-                                appendToBody: true
+                              class: "current-balance-tooltip",
+                              appendToBody: true
                             }),
                             Chartist.plugins.fillDonut({
-                                items: [
-                                    {
+                              items: [
+                                {
                                         content:
                                             `<p class="small">Total</p>
                                             <h5 class="mt-0 mb-0 text-center">${invoices}</h5>`
@@ -375,81 +333,89 @@
                                 ]
                             })
                         ]
-                    }
+                      }
                 );
                 var CurrentBalanceDonutChartCredit = new Chartist.Pie(
-                    "#current-balance-donut-chart-credit-note",
+                  "#current-balance-donut-chart-credit-note",
                     {
-                        labels: [1, 2],
+                      labels: [1, 2],
                         series: [
-                            { meta: "Completed", value: 80 },
-                            { meta: "Remaining", value: 20 }
+                          { meta: "Completed", value: 80 },
+                          { meta: "Remaining", value: 20 }
                         ]
-                    },
-                    {
+                      },
+                      {
                         donut: true,
                         donutWidth: 8,
                         showLabel: false,
                         plugins: [
-                            Chartist.plugins.tooltip({
-                                class: "current-balance-tooltip",
+                          Chartist.plugins.tooltip({
+                            class: "current-balance-tooltip",
                                 appendToBody: true
-                            }),
+                              }),
                             Chartist.plugins.fillDonut({
-                                items: [
+                              items: [
                                     {
                                         content:
                                             `<p class="small">Total</p>
                                             <h5 class="mt-0 mb-0 text-center">${noteCredit}</h5>`
                                     }
                                 ]
-                            })
+                              })
                         ]
                     }
-                );
+                    );
                 var CurrentBalanceDonutChartDebit = new Chartist.Pie(
                     "#current-balance-donut-chart-debit-note",
                     {
-                        labels: [1, 2],
+                      labels: [1, 2],
                         series: [
-                            { meta: "Completed", value: 80 },
-                            { meta: "Remaining", value: 20 }
+                          { meta: "Completed", value: 80 },
+                          { meta: "Remaining", value: 20 }
                         ]
                     },
                     {
-                        donut: true,
-                        donutWidth: 8,
-                        showLabel: false,
-                        plugins: [
-                            Chartist.plugins.tooltip({
-                                class: "current-balance-tooltip",
-                                appendToBody: true
-                            }),
-                            Chartist.plugins.fillDonut({
-                                items: [
+                      donut: true,
+                      donutWidth: 8,
+                      showLabel: false,
+                      plugins: [
+                        Chartist.plugins.tooltip({
+                          class: "current-balance-tooltip",
+                          appendToBody: true
+                        }),
+                        Chartist.plugins.fillDonut({
+                          items: [
                                     {
-                                        content:
+                                      content:
                                             `<p class="small">Total</p>
                                             <h5 class="mt-0 mb-0 text-center">${noteDebit}</h5>`
                                     }
-                                ]
-                            })
+                                  ]
+                                })
                         ]
                     }
                 );
-            });
+              });
         })(window, document, jQuery)
   </script>
   <script>
     function return_array (){
-      var array = <?php echo json_encode($array);?>;
+      var array = <?php echo json_encode($array) ?>;
       return array;
     }
     function type_support(){
       return 2;
     }
+    function id_detail(){
+      var id = <?php echo $id ?>;
+      return id;
+    }
+    function base_url_php(){
+      var base = '<?php echo $base_url ?>';
+      return base;
+    }
   </script>
   <script src="./php/assets/js/support.js"></script>
-
+  
 </body>
 </html>

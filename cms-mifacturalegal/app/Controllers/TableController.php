@@ -735,6 +735,38 @@ class TableController extends BaseController
                         $this->crud->unsetDelete();
                     }
                     break;
+                case 'question':
+                    $this->crud->setRelation('home_detail_id', 'home_detail', 'title');
+                    $this->crud->displayAs([
+                        'title'     => 'Titulo',
+                        'home_detail_id'   => 'Modulo de ayuda',
+                        'status' => 'Estado',
+                    ]);
+                    break;
+                case 'detail_question':
+                        $this->crud->setRelation('question_id', 'question', 'title');
+                        $this->crud->displayAs([
+                            'title'     => 'Titulo',
+                            'question_id'   => 'Pregunta',
+                            'text' => 'Descripcion',
+                            'status' => 'Estado',
+                            'img' => 'Imagen/Gif'
+                        ]);
+                        $this->crud->setTexteditor(['text']);
+                        $this->crud->setFieldUpload('img', './../../php/img/question', base_url().'./../../php/img/question');
+                        $this->crud->callbackBeforeUpload(function ($uploadData) {
+                            $fieldName = $uploadData->field_name;
+                        
+                            $filename = isset($_FILES[$fieldName]) ? $_FILES[$fieldName]['name'] : null;
+                            if (!preg_match('/\.(png|jpg|jpeg|gif)$/',$filename)) {
+                                return (new \GroceryCrud\Core\Error\ErrorMessage())
+                                    ->setMessage("The file extension for filename: '" . $filename. "'' is not supported!");
+                            }
+                            // Don't forget to return the uploadData at the end
+                            return $uploadData;
+                        });
+
+                        break;
             }
             $output = $this->crud->render();
             if (isset($output->isJSONResponse) && $output->isJSONResponse) {

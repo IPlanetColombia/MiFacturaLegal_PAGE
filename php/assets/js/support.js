@@ -13,7 +13,8 @@ $(document).ready(function() {
         element.questions.forEach(question => {
             var json = {
                 name: question.title,
-                id: question.id
+                id: question.id,
+                id_question: element.id
             }
             questions.push(json)
         });
@@ -32,11 +33,18 @@ $(document).ready(function() {
         template: {
             type: "custom",
             method: function(value, item) {
-                console.log(type);
                 if (type == 1)
                     return `<p onclick="active_modal(${item.id})">${value}</p>`;
-                else
-                    return `<a href="#${item.name.replace(/ /g, '-')}">${value}</a>`;
+                else {
+                    var id = id_detail();
+                    var base_url = base_url_php();
+                    console.log(base_url);
+                    if (id == item.id_question)
+                        return `<a href="#${item.name.replace(/ /g, '-')}">${value} ${item.id_question}</a>`;
+                    else
+                        return `<a href="${base_url}support_detail.php?option=${item.id_question}#${item.name.replace(/ /g, '-')}">${value} ${item.id_question}</a>`;
+
+                }
             }
         }
 
@@ -59,6 +67,6 @@ function active_modal(id) {
     console.log(pregunta);
     $("#title-modal").html(pregunta.title)
     $("#sub-title-modal").html(pregunta.questions.title)
-    $("#description-modal").html(`${pregunta.questions.question} <br><br> ${pregunta.questions.question}`)
+    $("#description-modal").html(`${pregunta.questions.answer}`)
     $('#exampleModal').modal('show');
 }

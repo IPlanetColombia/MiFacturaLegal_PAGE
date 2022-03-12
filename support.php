@@ -3,40 +3,15 @@
 	$conection = new Conection();
 	$query = "SELECT * FROM head";
 	$general = mysqli_fetch_array($conection->conection()->query($query));
-
-
-  
-  $array = [
-    ['title' => 'Facturación Electrónica', 'img' => 'icono-factura.png',
-      'questions' => [
-        ['id' => 1, "title" => "¿Que es Facturación Electrónica?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-        ['id' => 6, "title" => "¿Para que sirve Facturación Electrónica?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-        ['id' => 7, "title" => "¿Como uso la Facturación Electrónica?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-      ]
-    ],
-    ['title' => 'Documentos Soporte', 'img' => 'icono-documento.png',
-      'questions' => [
-        ['id' => 2, "title" => "¿Que es Documentos Soporte?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-        ['id' => 8, "title" => "¿Como uso Documentos Soporte?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'],
-        ['id' => 9, "title" => "¿Como descargo Documentos Soporte?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.']
-      ]
-    ],
-    ['title' => 'Nómina Electrónica', 'img' => 'icono-nomina.png',
-      'questions' => [
-        ['id' => 3, "title" => "¿Que es Nómina Electrónica?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.']
-      ]
-    ],
-    ['title' => 'Recepción Documentos', 'img' => 'icono-recepcion.png',
-      'questions' => [
-        ['id' => 4, "title" => "¿Que es Recepción Documentos?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.']
-      ]
-    ],
-    ['title' => 'Soporte', 'img' => 'icono-soporte.png',
-      'questions' => [
-        ['id' => 5, "title" => "¿Que es Soporte?", 'question' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.']
-      ]
-    ],
-  ];
+  $array = $conection->conection_pdo()->query("Select * From home_detail")->fetchAll(PDO::FETCH_OBJ);
+  foreach($array as $key => $modulo){
+    $questions = $conection->conection_pdo()->query("Select * From question where home_detail_id = $modulo->id order by orden ASC")->fetchAll(PDO::FETCH_OBJ);
+    $array[$key]->questions = $questions;
+    foreach($questions as $llave => $pregunta){
+      $question = $conection->conection_pdo()->query("Select * From detail_question where question_id = $pregunta->id and orden = 1")->fetchAll(PDO::FETCH_OBJ);
+      $array[$key]->questions[$llave]->answer = !empty($question[0]->text) ? $question[0]->text:'';
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -213,26 +188,30 @@
   <div class="container pt-5 pb-5 preguntas-container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php foreach ($array as $detail): ?>
-          <div class="col preguntas ">
-            <div class="card h-100">
-              <div class="img-preguntas">
-                <div>
-                  <img src="./php/img/home/<?= $detail['img'] ?>" class="preguntas card-img-top" alt="...">
+          <?php if(!empty($detail->questions)): ?>
+            <div class="col preguntas ">
+              <div class="card h-100">
+                <div class="img-preguntas">
+                  <div>
+                    <img src="./php/img/home/<?= $detail->img ?>" class="preguntas card-img-top" alt="...">
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center"><?= $detail->title ?></h5>
+                  <ul>
+                    <?php foreach($detail->questions as $question): ?>
+                      <?php if($question->prioridad == "Activo" && $question->status == "Activo"): ?>
+                        <li><span onclick="active_modal(<?= $question->id ?>)"><i data-feather="chevrons-right"></i> <?= $question->title ?></span></li>
+                      <?php endif ?>
+                    <?php endforeach ?>
+                  </ul>
+                </div>
+                <div class="card-footer">
+                  <a href="<?= $base_url ?>support_detail.php?option=<?= $detail->id ?>" class="btn my-boton">Saber más</a>
                 </div>
               </div>
-              <div class="card-body">
-                <h5 class="card-title text-center"><?= $detail['title'] ?></h5>
-                <ul>
-                  <?php foreach($detail['questions'] as $question): ?>
-                    <li><span onclick="active_modal(<?= $question['id'] ?>)"><i data-feather="chevrons-right"></i> <?= $question['title'] ?></span></li>
-                  <?php endforeach ?>
-                </ul>
-              </div>
-              <div class="card-footer">
-                <a href="<?= $base_url ?>/support_detail.php" class="btn my-boton">Saber más</a>
-              </div>
             </div>
-          </div>
+          <?php endif ?>
         <?php endforeach ?>
     </div>
   </div>
