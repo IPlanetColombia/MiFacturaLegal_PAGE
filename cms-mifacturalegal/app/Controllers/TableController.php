@@ -789,17 +789,50 @@ class TableController extends BaseController
                         'description' => 'Descripción',
                     ]);
                     $this->crud->setTexteditor(['description']);
-                    $this->crud->setFieldUpload('img', './../../php/img/gmail', base_url().'./../../php/img/gmail');
-                    $this->crud->callbackBeforeUpload(function ($uploadData) {
+                    $this->crud->setFieldUpload('img', '', base_url().'./../../php/img/gmail');
+                    $this->crud->callbackUpload(function ($uploadData)  {
+                        $uploadPath = '../../php/img/gmail'; // directory of the drive
+                        $publicPath = '../../php/img/gmail'; // public directory (at the URL)
                         $fieldName = $uploadData->field_name;
-                    
-                        $filename = isset($_FILES[$fieldName]) ? $_FILES[$fieldName]['name'] : null;
-                        if (!preg_match('/\.(png|jpg|jpeg|gif)$/',$filename)) {
-                            return (new \GroceryCrud\Core\Error\ErrorMessage())
-                                ->setMessage("The file extension for filename: '" . $filename. "'' is not supported!");
+                        $img = '../../php/img/gmail/'.$_FILES[$fieldName]['name'];
+                        if(file_exists($img)){
+                            $filename = isset($_FILES[$fieldName]) ? $_FILES[$fieldName]['name'] : null;
+                            $uploadData->filePath = $publicPath . '/' . $filename;
+                            $uploadData->filename = $filename;
+                            return $uploadData;
+                        }else{
+                            $storage = new \Upload\Storage\FileSystem($uploadPath);
+                            $file = new \Upload\File($fieldName, $storage);
+                            $filename = isset($_FILES[$fieldName]) ? $_FILES[$fieldName]['name'] : null;
+                            if ($filename === null) {
+                                return false;
+                            }
+                            $filename = preg_replace('/\\.[^.\\s]{3,4}$/', '', $filename);
+                            $filename = preg_replace("/([^a-zA-Z0-9\-\_]+?){1}/i", '_', $filename);
+                            $file->setName($filename);
+                            $file->addValidations([
+                                new \Upload\Validation\Extension(['gif', 'jpeg', 'jpg', 'png', 'svg']),
+                                new \Upload\Validation\Size('20M')
+                            ]);
+                            $display_errors = ini_get('display_errors');
+                            $error_reporting = error_reporting();
+                            ini_set('display_errors', 'on');
+                            error_reporting(E_ALL);
+                            try {
+                                $file->upload();
+                            } catch (\Upload\Exception\UploadException $e) {
+                                $errors = print_r($file->getErrors(), true);
+                                return (new \GroceryCrud\Core\Error\ErrorMessage())->setMessage("There was an error with the upload:\n" . $errors);
+                            } catch (\Exception $e) {
+                                throw $e;
+                            }
+                            ini_set('display_errors', $display_errors);
+                            error_reporting($error_reporting);
+                            $filename = $file->getNameWithExtension();
+                            $uploadData->filePath = $publicPath . '/' . $filename;
+                            $uploadData->filename = $filename;
+                            return $uploadData;
                         }
-                        // Don't forget to return the uploadData at the end
-                        return $uploadData;
                     });
                     break;
             }
