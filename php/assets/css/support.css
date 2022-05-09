@@ -142,8 +142,13 @@
     background: none !important;
 }
 
-.breadcrumb a {
+.breadcrumb a,
+.list-group-item a {
     color: rgba(128, 33, 181) !important;
     font-weight: 600;
     text-decoration: none;
+}
+
+.img-gmail {
+    max-height: 350px;
 }

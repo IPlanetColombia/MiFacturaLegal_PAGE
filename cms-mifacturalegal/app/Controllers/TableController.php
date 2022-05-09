@@ -18,6 +18,7 @@ use App\Models\PreciosGeneral;
 use App\Models\HomeDetail;
 use App\Models\PasosDetail;
 use App\Models\PreciosDetail;
+use App\Models\Gmail;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
 class TableController extends BaseController
@@ -765,8 +766,42 @@ class TableController extends BaseController
                             // Don't forget to return the uploadData at the end
                             return $uploadData;
                         });
-
+                        
                         break;
+                case 'gmail':
+                    $this->crud->displayAs([
+                        'title'     => 'Titulo',
+                        'subtitle'   => 'Sub titulo',
+                        'description' => 'Descripción',
+                    ]);
+                    $this->crud->setTexteditor(['description']);
+                    $count = new Gmail();
+                    $count = $count->countAllResults();
+                    if($count > 0){
+                        $this->crud->unsetAdd();
+                        $this->crud->unsetDelete();
+                    }
+                    break;
+                case 'gmail_detail':
+                    $this->crud->displayAs([
+                        'title'     => 'Titulo',
+                        'img' => 'Imagen/Gif',
+                        'description' => 'Descripción',
+                    ]);
+                    $this->crud->setTexteditor(['description']);
+                    $this->crud->setFieldUpload('img', './../../php/img/gmail', base_url().'./../../php/img/gmail');
+                    $this->crud->callbackBeforeUpload(function ($uploadData) {
+                        $fieldName = $uploadData->field_name;
+                    
+                        $filename = isset($_FILES[$fieldName]) ? $_FILES[$fieldName]['name'] : null;
+                        if (!preg_match('/\.(png|jpg|jpeg|gif)$/',$filename)) {
+                            return (new \GroceryCrud\Core\Error\ErrorMessage())
+                                ->setMessage("The file extension for filename: '" . $filename. "'' is not supported!");
+                        }
+                        // Don't forget to return the uploadData at the end
+                        return $uploadData;
+                    });
+                    break;
             }
             $output = $this->crud->render();
             if (isset($output->isJSONResponse) && $output->isJSONResponse) {
